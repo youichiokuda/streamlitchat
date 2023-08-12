@@ -24,7 +24,7 @@ def do_question():
         st.session_state.question_input = ""
 
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=st.session_state.messages
         )
         
@@ -39,9 +39,9 @@ def main():
         st.session_state.condition = ""
 
     #タイトル
-    st.title("教えてGPT先輩！")
+    st.title("GPTチャット！")
     # テキストボックスに役割を入力
-    st.text_input("（任意）GPT先輩のキャラを決めてください。(例:「あなたは関西人です。関西弁で話してください。」)", key="condition_input")
+    st.text_input("（任意）人物設定してください。(例:「あなたはいけずな京都人です。京都弁で話してください。」)", key="condition_input")
     # テキストボックスで質問を入力
     st.text_input("（必須）質問を入力してください", key="question_input")
     # 送信ボタンがクリックするとOpenAIに問い合わせる
