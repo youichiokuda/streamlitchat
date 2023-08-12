@@ -24,7 +24,7 @@ def do_question():
         st.session_state.question_input = ""
 
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=st.session_state.messages
         )
         
